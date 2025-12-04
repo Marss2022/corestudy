@@ -1,279 +1,243 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Studie – Texte</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Studietexte</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-      padding: 1.5rem;
-      line-height: 1.45;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    h1 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    button {
-      display: block;
-      width: 100%;
-      margin: 0.4rem 0;
-      padding: 0.9rem 1rem;
-      font-size: 1.05rem;
-      border-radius: 0.6rem;
-      border: 1px solid #ccc;
-      background: #f4f4f4;
-      cursor: pointer;
-    }
-    button.small {
-      font-size: 0.85rem;
-      padding: 0.5rem 0.7rem;
-      width: auto;
-      margin-top: 1rem;
-    }
-    input[type="text"] {
-      width: 100%;
-      padding: 0.7rem 0.8rem;
-      margin: 0.3rem 0 0.6rem 0;
-      border-radius: 0.4rem;
-      border: 1px solid #bbb;
-      font-size: 1rem;
-      box-sizing: border-box;
-    }
-    .hidden { display: none; }
-    .box {
-      background: #fafafa;
-      border: 1px solid #ddd;
-      border-radius: 0.6rem;
-      padding: 1rem;
-      margin-top: 1rem;
-    }
-    .small-text {
-      font-size: 0.85rem;
-      color: #555;
-    }
-    .code-display {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-top: 0.2rem;
-      word-break: break-word;
-    }
-    ul.small-text {
-      padding-left: 1.2rem;
-      margin-top: 0.2rem;
-      margin-bottom: 0.4rem;
-    }
-  </style>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    padding: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.45;
+  }
+  h1 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  .box {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 0.6rem;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin: 0.4rem 0;
+    font-size: 1.1rem;
+    border-radius: 0.7rem;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .b1 { background: #4285F4; }   /* Blau */
+  .b2 { background: #34A853; }   /* Grün */
+  .b3 { background: #FB8C00; }   /* Orange */
+
+  .back-btn {
+    background: #555;
+    width: auto;
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    border-radius: 0.6rem;
+    color: white;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    border-radius: 0.6rem;
+    border: 1px solid #bbb;
+    margin-bottom: 0.6rem;
+  }
+
+  .hidden { display: none; }
+
+  #pdfViewer {
+    width: 100%;
+    height: 80vh;
+    border: 1px solid #ccc;
+    margin-top: 1rem;
+  }
+
+  .small-text {
+    font-size: 0.88rem;
+    color: #555;
+  }
+
+  .code-display {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+</style>
 </head>
 
 <body>
 
-<h1>Studie – Texte</h1>
+<h1>Studientexte</h1>
 
-<!-- Intro-Bereich -->
+<!-- Introbereich -->
 <div id="introArea" class="box">
-
-  <p>
-    Bitte lassen Sie <strong>jede Versuchsperson ihren anonymen Studiencode</strong> eingeben  
-    (denselben Code, der auch im SoSci-Fragebogen verwendet wird).
-  </p>
-
-  <p class="small-text">Der Studiencode setzt sich wie folgt zusammen:</p>
-  <ul class="small-text">
-    <li>den ersten 2 Buchstaben Ihres Geburtsortes,</li>
-    <li>den letzten 2 Ziffern Ihres Geburtsjahres und</li>
-    <li>den letzten 2 Ziffern Ihrer Hausnummer (Hausnummer 200 = 00; Hausnummer 1 = 01).</li>
-  </ul>
-
-  <p class="small-text"><strong>Beispiel:</strong> Berlin, 1985, Hausnummer 12 → <em>BE8512</em></p>
-
-  <label for="codeInput"><strong>Studiencode eingeben:</strong></label>
-  <input id="codeInput" type="text" autocomplete="off" autocapitalize="none" spellcheck="false">
-
-  <button id="confirmCodeBtn">Code bestätigen</button>
-
-  <p id="statusText" class="small-text" style="margin-top:0.6rem;"></p>
+  <p>Bitte geben Sie hier Ihren Studiencode ein.</p>
 
   <p class="small-text">
-    Hinweis: Wenn derselbe Code später erneut eingegeben wird, erhält die Person automatisch dieselbe Textversion.  
-    Die Zuordnung bleibt während der Datenerhebung gespeichert.
+    Ihr Studiencode setzt sich wie folgt zusammen:
   </p>
+  <ul class="small-text">
+    <li>den ersten zwei Buchstaben Ihres Geburtsortes,</li>
+    <li>den letzten zwei Ziffern Ihres Geburtsjahres und</li>
+    <li>den letzten zwei Ziffern Ihrer Hausnummer (Beispiel: Hausnummer 1 → 01).</li>
+  </ul>
+  <p class="small-text"><strong>Beispiel:</strong> Berlin, 1985, Hausnummer 12 → <em>BE8512</em></p>
+
+  <input id="codeInput" type="text" autocomplete="off" autocapitalize="none" placeholder="Studiencode eingeben">
+  <button id="confirmCodeBtn" class="b1">Studiencode bestätigen</button>
+  <p id="statusText" class="small-text"></p>
 </div>
 
-
-<!-- Bereich für die Stations-Buttons -->
+<!-- Stations-Bereich -->
 <div id="stationArea" class="box hidden">
+  <p>Sie können nun die Texte an den folgenden Stationen öffnen:</p>
 
-  <p>
-    Die Versuchsperson kann nun in der Ausstellung an den Stationen die Texte öffnen:
-  </p>
+  <button class="b1" onclick="openPdf(1)">Text öffnen bei <em>Gebäude und Siedlungen</em></button>
+  <button class="b2" onclick="openPdf(2)">Text öffnen bei <em>Textilien</em></button>
+  <button class="b3" onclick="openPdf(3)">Text öffnen bei <em>Riffe der Gegenwart</em></button>
 
-  <button onclick="openPdf(1)">Text öffnen bei <em>Gebäude und Siedlungen</em></button>
-  <button onclick="openPdf(2)">Text öffnen bei <em>Textilien</em></button>
-  <button onclick="openPdf(3)">Text öffnen bei <em>Riffe der Gegenwart</em></button>
-
-  <div class="box" style="border:1px dashed #bbb; background:white; margin-top:1rem;">
-    <p><strong>Studiencode dieser Person:</strong></p>
+  <div class="box" style="margin-top:1rem; background:white;">
+    <p><strong>Ihr Studiencode:</strong></p>
     <p id="codeDisplay" class="code-display"></p>
-    <p class="small-text">
-      Dieser Code wird im SoSci-Fragebogen eingetragen.
-      Die tatsächliche Textversion ist hier nicht sichtbar und wird erst in der Auswertung über die Zuteilungstabelle rekonstruiert.
-    </p>
+    <p class="small-text">Dieser Code wird auch im Fragebogen eingetragen.</p>
   </div>
 
-  <button id="resetBtn" class="small">Versuchsperson beendet – für nächste Person zurücksetzen</button>
+  <button class="back-btn" onclick="resetParticipant()">Studienvorgang beenden</button>
 </div>
 
+<!-- PDF-Bereich -->
+<div id="pdfArea" class="box hidden">
+  <p><strong>Textansicht:</strong></p>
+  <iframe id="pdfViewer"></iframe>
+  <button class="back-btn" onclick="returnToMenu()">Zurück zur Auswahl</button>
+</div>
 
 <script>
-/* ---------------------------------------------
-   Passwortschutz (lokal)
---------------------------------------------- */
-let ACCESS_GRANTED = true;
+/* ---------------------------------
+   Passwortschutz
+---------------------------------- */
 const ACCESS_PASSWORD = "Muse2025!";
+let ACCESS_GRANTED = true;
 
 (function () {
-  if (!sessionStorage.getItem("corestudy_access")) {
-    let attempts = 0, ok = false;
-    while (attempts < 3 && !ok) {
-      const entered = prompt("Bitte geben Sie das Studienpasswort ein:");
-      if (entered === null) break;
-      if (entered === ACCESS_PASSWORD) {
+  if (!sessionStorage.getItem("access_ok")) {
+    let ok = false, attempts = 0;
+    while (!ok && attempts < 3) {
+      const p = prompt("Bitte geben Sie das Studienpasswort ein:");
+      if (p === ACCESS_PASSWORD) {
         ok = true;
-        sessionStorage.setItem("corestudy_access", "1");
-        break;
+        sessionStorage.setItem("access_ok", "1");
+      } else {
+        attempts++;
+        alert("Passwort falsch.");
       }
-      attempts++;
-      alert("Passwort falsch. Bitte erneut versuchen.");
     }
     if (!ok) {
       ACCESS_GRANTED = false;
       document.body.innerHTML =
-        '<p style="padding:1.5rem;font-family:-apple-system,system-ui;">Zugriff verweigert.</p>';
+        "<p style='padding:1.5rem;'>Zugriff verweigert.</p>";
     }
   }
 })();
 
-
-/* ---------------------------------------------
-   Nur Initialisieren, wenn Passwort korrekt
---------------------------------------------- */
+/* ---------------------------------
+   Nur starten, wenn Zugriff erlaubt
+---------------------------------- */
 if (ACCESS_GRANTED) {
 
-  // === Deine Apps-Script-URL ===
   const SCRIPT_URL =
     "https://script.google.com/macros/s/AKfycbwyYsAM9KsAaPPklixaMA_1AmPSI4k6cx-3wCMll4Au4lwca5YHc-5srS6pUC14yPxYZQ/exec";
 
   let currentCode = null;
-  let condition = null; // 1 = gain, 2 = loss, 3 = neutral
+  let condition = null;
 
-
-  // -------------------------------
-  // Funktion: Bedingung vom Server holen
-  // -------------------------------
   async function fetchCondition(code) {
-    const url = SCRIPT_URL + "?code=" + encodeURIComponent(code);
-    const res = await fetch(url);
-
-    if (!res.ok) {
-      throw new Error("Serverfehler");
-    }
-
+    const res = await fetch(SCRIPT_URL + "?code=" + encodeURIComponent(code));
+    if (!res.ok) throw new Error("Fehler bei Serveranfrage");
     const data = await res.json();
-    if (!data.success || !data.condition) {
-      throw new Error("Zuteilungsfehler");
-    }
-
+    if (!data.success) throw new Error("Zuteilung nicht erfolgreich");
     return data.condition;
   }
 
-
-  // -------------------------------
-  // Code bestätigen
-  // -------------------------------
   async function confirmCode() {
-    const inputEl = document.getElementById("codeInput");
-    const statusEl = document.getElementById("statusText");
-    const code = inputEl.value.trim();
+    const input = document.getElementById("codeInput");
+    const code = input.value.trim();
+    const status = document.getElementById("statusText");
 
     if (!code) {
       alert("Bitte geben Sie einen gültigen Studiencode ein.");
       return;
     }
 
-    statusEl.textContent = "Code wird geprüft …";
+    status.textContent = "Code wird geprüft …";
 
     try {
-      const cond = await fetchCondition(code);
+      condition = await fetchCondition(code);
       currentCode = code;
-      condition = cond;
-
-      statusEl.textContent = "Code akzeptiert.";
-      inputEl.value = "";
 
       document.getElementById("stationArea").classList.remove("hidden");
       document.getElementById("codeDisplay").textContent = currentCode;
+      document.getElementById("pdfArea").classList.add("hidden");
+
+      status.textContent = "Studiencode akzeptiert.";
+      input.value = "";
 
     } catch (err) {
       console.error(err);
-      statusEl.textContent = "Fehler bei der Zuteilung. Bitte erneut versuchen.";
-      alert("Es gab ein Problem mit der Zuteilung. Bitte informieren Sie die Versuchsleitung.");
+      alert("Es gab ein Problem bei der Zuteilung. Bitte wenden Sie sich an das Studienpersonal.");
+      status.textContent = "Zuteilung fehlgeschlagen.";
     }
   }
 
-
-  // -------------------------------
-  // Für nächste VP zurücksetzen
-  // -------------------------------
-  function resetParticipant() {
-    currentCode = null;
-    condition = null;
-
-    document.getElementById("stationArea").classList.add("hidden");
-    document.getElementById("codeDisplay").textContent = "";
-    document.getElementById("statusText").textContent = "";
-  }
-
-
-  // -------------------------------
-  // PDF öffnen
-  // -------------------------------
   function openPdf(station) {
     if (!condition) {
-      alert("Bitte zuerst einen gültigen Code eingeben.");
+      alert("Bitte zuerst Ihren Studiencode eingeben.");
       return;
     }
 
     let path = "";
+    if (condition === 1) path = `pdfs/gain_${station}.pdf`;
+    if (condition === 2) path = `pdfs/loss_${station}.pdf`;
+    if (condition === 3) path = `pdfs/neutral_${station}.pdf`;
 
-    if (condition === 1) {
-      path = "pdfs/gain_" + station + ".pdf";
-    } else if (condition === 2) {
-      path = "pdfs/loss_" + station + ".pdf";
-    } else if (condition === 3) {
-      path = "pdfs/neutral_" + station + ".pdf";
-    } else {
-      alert("Fehlerhafte Bedingung.");
-      return;
-    }
-
-    window.location.href = path;
+    document.getElementById("stationArea").classList.add("hidden");
+    document.getElementById("pdfArea").classList.remove("hidden");
+    document.getElementById("pdfViewer").src = path;
   }
 
+  function returnToMenu() {
+    document.getElementById("pdfArea").classList.add("hidden");
+    document.getElementById("stationArea").classList.remove("hidden");
+    document.getElementById("pdfViewer").src = "";
+  }
 
-  // Buttons aktivieren
+  function resetParticipant() {
+    currentCode = null;
+    condition = null;
+    document.getElementById("stationArea").classList.add("hidden");
+    document.getElementById("pdfArea").classList.add("hidden");
+    document.getElementById("statusText").textContent = "";
+  }
+
   document.getElementById("confirmCodeBtn").onclick = confirmCode;
-  document.getElementById("resetBtn").onclick = resetParticipant;
-
-  document.getElementById("codeInput").addEventListener("keypress", function (e) {
-    if (e.key === "Enter") {
-      confirmCode();
-    }
+  document.getElementById("codeInput").addEventListener("keypress", e => {
+    if (e.key === "Enter") confirmCode();
   });
+
 }
 </script>
 
